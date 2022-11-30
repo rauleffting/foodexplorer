@@ -10,7 +10,7 @@ export default createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.COLORS.BG_BODY};
 
-    font-family:'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   a {

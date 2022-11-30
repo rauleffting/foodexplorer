@@ -5,10 +5,15 @@ export default {
     BG_SEARCH: "#0D1D25",
     BG_HEADERFOOTER: "#00111A",
 
+    BG_FRONTCOVER: "linear-gradient(180deg, #091E26 0%, #00131C 100%)",
+
     CARD_BG: "rgba(0, 0, 0, 0.32)",
     CARD_BORDER: "rgba(0, 0, 0, 0.65)",
+    CARD_ICONS:"#D9D9D9",
 
-    PRICE_COLOR:"#82F3FF",
+    SLIDERARROW_BG: "linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%)",
+
+    PRICE:"#82F3FF",
 
     FOOTER_LOGO:"rgba(255, 255, 255, 0.3)",
     FOOTER_COPYRIGHT:"#FFFAF1",
