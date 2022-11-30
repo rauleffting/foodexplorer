@@ -20,33 +20,6 @@ export const Content = styled.main`
   flex-direction: column;
   overflow-y: auto;
 
-  .button-back {
-    max-width: 225px;
-    padding: 30px 0 41.42px 122px;
-    display: flex;
-    align-items: center;
-
-    background: transparent;
-    border: none;
-
-    > svg {
-      width: 32px;
-      height: 32px;
-
-      color: ${({ theme }) => theme.COLORS.WHITE};
-    }
-
-    > span {
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 140%;
-
-      color: ${({ theme }) => theme.COLORS.GRAY_100};
-    }
-  }
-
   .details-wrapper {
     display: flex;
     gap: 41px;

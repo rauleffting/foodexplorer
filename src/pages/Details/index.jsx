@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Container, Content } from './styles';
 
-import { IoIosArrowBack } from 'react-icons/io';
 import { RiAddFill, RiSubtractFill } from 'react-icons/ri';
 
 import { Header } from '../../components/Header';
+import { ButtonBack } from '../../components/ButtonBack';
 import { IngredientCard } from '../../components/IngredientCard';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
@@ -20,10 +20,7 @@ export function Details(){
       <Header />
 
       <Content className="content">
-        <button className="button-back">
-          <IoIosArrowBack />
-          <span>voltar</span>
-        </button>
+        <ButtonBack />
 
         <div className="details-wrapper">
           <img src={parma} alt="food picture"/>

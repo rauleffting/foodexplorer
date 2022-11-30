@@ -1,7 +1,7 @@
 export default {
   COLORS: {
     BG_BODY: "#000A0F",
-    BG_SIGNFIELD: "#001119",
+    BG_SIGNFORM: "#001119",
     BG_SEARCH: "#0D1D25",
     BG_HEADERFOOTER: "#00111A",
 
@@ -13,7 +13,9 @@ export default {
 
     SLIDERARROW_BG: "linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%)",
 
-    PRICE:"#82F3FF",
+    PRICE: "#82F3FF",
+
+    TABLE_BORDER: "#192227",
 
     FOOTER_LOGO:"rgba(255, 255, 255, 0.3)",
     FOOTER_COPYRIGHT:"#FFFAF1",
