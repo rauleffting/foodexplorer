@@ -6,9 +6,9 @@ import { ButtonText } from '../../components/ButtonText';
 
 import polygon from '../../assets/polygon.svg';
 
-export function SignIn() {
+export function SignUp() {
   return(
-    <Container>
+    <Container class="content">
       <Logo>
         <img src={polygon} alt="polygon"/>
         <h2>food explorer</h2>
@@ -16,8 +16,12 @@ export function SignIn() {
 
       <Form>
         <header>
-          Faça login
+          Crie sua conta
         </header>
+        <Input 
+          label="Seu nome"
+          placeholder="Exemplo: Maria da Silva"
+        />
         <Input 
           label="Email"
           placeholder="Exemplo: exemplo@exemplo.com.br"
@@ -29,11 +33,11 @@ export function SignIn() {
         <Button
           isRed
         >
-          <span>Entrar</span>
+          <span>Criar conta</span>
         </Button>
 
         <ButtonText>
-          <span>Criar conta</span>
+          <span>Já tenho uma conta</span>
         </ButtonText>
       </Form>
     </Container>

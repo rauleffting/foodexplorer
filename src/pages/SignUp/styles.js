@@ -4,10 +4,16 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   padding-bottom: 100px;
-  
+
   display: flex;
   justify-content: center;
   gap: 306px;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  overflow-y:auto;
 `;
 
 export const Logo =styled.div`
@@ -30,6 +36,8 @@ export const Logo =styled.div`
     line-height: 50px;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
+
+    white-space: nowrap;
   }
 `;
 

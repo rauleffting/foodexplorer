@@ -11,6 +11,7 @@ import { EditFood } from './pages/EditFood';
 import { Home } from './pages/Home';
 import { Requests } from './pages/Requests';
 import { SignIn } from './pages/SignIn';
+import { SignUp } from './pages/SignUp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
