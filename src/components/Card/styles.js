@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -27,42 +29,6 @@ export const Container = styled.div`
 
       color: ${({ theme }) => theme.COLORS.CARD_ICONS};
     }
-  }
-
-  > img {
-    width: 176px;
-    height: 176px;
-
-    padding-bottom: 16px;
-  }
-
-  > h2 {
-    padding: 0 22.5px 18px;
-
-    white-space: nowrap;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 140%;
-
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
-  }
-
-  > span {
-    width: 220px;
-    padding-bottom: 16px;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 160%;
-
-    text-align: center;
-
-    color: ${({ theme }) => theme.COLORS.GRAY_200};
   }
 
   > h3 {
@@ -116,5 +82,48 @@ export const Container = styled.div`
 
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
+  }
+`;
+
+
+export const LinkSection = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > img {
+    width: 176px;
+    height: 176px;
+
+    padding-bottom: 16px;
+  }
+
+  > h2 {
+    padding: 0 22.5px 18px;
+
+    white-space: nowrap;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+
+    color: ${({ theme }) => theme.COLORS.GRAY_100};
+  }
+
+  > span {
+    width: 220px;
+    padding-bottom: 16px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+
+    text-align: center;
+
+    color: ${({ theme }) => theme.COLORS.GRAY_200};
   }
 `;

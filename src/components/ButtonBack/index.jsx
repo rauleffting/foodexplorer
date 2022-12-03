@@ -2,9 +2,11 @@ import { Container } from './styles';
 
 import { IoIosArrowBack } from 'react-icons/io';
 
-export function ButtonBack() {
+export function ButtonBack({ to }) {
   return(
-    <Container>
+    <Container
+      to={to}
+    >
       <IoIosArrowBack />
       <span>voltar</span>
     </Container>

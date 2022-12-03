@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Container } from './styles';
+import { Container, LinkSection } from './styles';
 
 import { RiEditBoxLine, RiHeartLine, RiArrowDropRightLine, RiAddFill, RiSubtractFill } from 'react-icons/ri';
 import parma from '../../assets/parma.png';
@@ -17,12 +17,15 @@ export function Card({ data }){
         <RiEditBoxLine />
         <RiHeartLine />
       </div>
-      
+      <LinkSection
+        to="/details"
+      >
       <img src={parma} alt="food picture" />
 
       <h2>{data.name}</h2>
-      
       <span>{data.description}</span>
+      </LinkSection>
+
       <h3>R$ {data.price}</h3>
 
       <div className="bottom-controls">
@@ -37,7 +40,7 @@ export function Card({ data }){
         </button>
         
         <Button isRed>
-          Incluir
+          <span>Incluir</span>
         </Button>
       </div>
     </Container>

@@ -19,7 +19,6 @@ export const Content = styled.main`
 
     width: 500px;
     padding: 32px;
-    margin-top: 48px;
 
     border-radius: 8px;
     background-color: ${({ theme }) => theme.COLORS.BG_HEADERFOOTER};

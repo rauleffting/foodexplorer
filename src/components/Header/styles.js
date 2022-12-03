@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -12,7 +14,7 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.BG_HEADERFOOTER};
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
   display: flex;
   align-items: center;
   gap: 11.2px;
@@ -55,7 +57,7 @@ export const Search = styled.div`
   }
 `;
 
-export const IconButton = styled.button`
+export const IconButton = styled(Link)`
   background: transparent;
   border: none;
   > svg {

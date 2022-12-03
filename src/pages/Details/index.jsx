@@ -20,7 +20,9 @@ export function Details(){
       <Header />
 
       <Content className="content">
-        <ButtonBack />
+        <ButtonBack 
+          to="/"
+        />
 
         <div className="details-wrapper">
           <img src={parma} alt="food picture"/>

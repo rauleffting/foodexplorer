@@ -10,9 +10,15 @@ import receipt from '../../assets/receipt.svg';
 
 export function Header(){
 
+  function handleSignOut() {
+    alert('Deseja mesmo sair?')
+  }
+
   return(
     <Container>
-      <Logo>
+      <Logo
+        to="/"
+      >
         <img src={polygon} alt="logo" />
         <span>
           food explorer
@@ -36,11 +42,15 @@ export function Header(){
         <span>Meu pedido (0)</span>
       </Button>
 
-      <IconButton>
+      <IconButton
+        to="/profile"
+      >
         <RiUser3Line />
       </IconButton>
 
-      <IconButton>
+      <IconButton
+        onClick={handleSignOut}
+      >
         <RiLogoutBoxRLine />
       </IconButton>
     </Container>

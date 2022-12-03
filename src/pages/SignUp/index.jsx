@@ -8,7 +8,7 @@ import polygon from '../../assets/polygon.svg';
 
 export function SignUp() {
   return(
-    <Container class="content">
+    <Container>
       <Logo>
         <img src={polygon} alt="polygon"/>
         <h2>food explorer</h2>
@@ -36,7 +36,9 @@ export function SignUp() {
           <span>Criar conta</span>
         </Button>
 
-        <ButtonText>
+        <ButtonText
+          to="/"
+        >
           <span>Já tenho uma conta</span>
         </ButtonText>
       </Form>

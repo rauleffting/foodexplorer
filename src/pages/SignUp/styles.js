@@ -10,12 +10,6 @@ export const Container = styled.div`
   justify-content: center;
   gap: 306px;
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  overflow-y:auto;
-
   @media (max-width: 1280px) {
     height: 100%;
     width: 100%;
@@ -89,6 +83,21 @@ export const Form = styled.form`
     line-height: 24px;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
+  }
+
+  animation: fadeIn 1s;
+
+  box-shadow: 0px 0px 7px 1px rgba(255, 255, 255, 0.1);
+
+  @keyframes fadeIn {
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
   }
 
   @media (max-width: 1280px) {

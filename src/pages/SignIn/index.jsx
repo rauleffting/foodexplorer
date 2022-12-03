@@ -32,7 +32,9 @@ export function SignIn() {
           <span>Entrar</span>
         </Button>
 
-        <ButtonText>
+        <ButtonText
+          to='/register'
+        >
           <span>Criar conta</span>
         </ButtonText>
       </Form>

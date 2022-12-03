@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.button`
+import { Link } from 'react-router-dom'
+
+export const Container = styled(Link)`
   border: none;
   background: transparent;
   

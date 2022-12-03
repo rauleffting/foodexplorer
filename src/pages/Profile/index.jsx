@@ -5,6 +5,7 @@ import { Avatar, Container, Content, Form } from './styles';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
+import { ButtonBack } from '../../components/ButtonBack';
 import { Footer } from '../../components/Footer';
 
 import avatarPlaceHolder from '../../assets/avatar_placeholder.png';
@@ -18,7 +19,9 @@ export function Profile() {
   return(
     <Container>
       <Header />
-
+      <ButtonBack 
+        to="/"
+      />
       <Content>
         <div className="content-wrapper">
           <Form>
@@ -82,6 +85,7 @@ export function Profile() {
 
           <Button
             isRed
+            to="/requests"
           >
               <span>Histórico de Pedidos</span>
           </Button>

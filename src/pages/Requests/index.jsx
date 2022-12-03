@@ -7,7 +7,6 @@ export function Requests(){
   return(
     <Container>
       <Header />
-
       <Content className="content">
         <h2>
           Pedidos

@@ -79,7 +79,9 @@ export const Content = styled.main`
 
           text-align: center;
 
-          color: ${({ theme }) => theme.COLORS.PRICE}
+          color: ${({ theme }) => theme.COLORS.PRICE};
+
+          white-space: nowrap;
         }
 
         .buttons-minus-plus {
