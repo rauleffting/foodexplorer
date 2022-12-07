@@ -20,3 +20,5 @@ Feel free to test: foodexplorer-94.netlify.app
 email: admin@email.com
 
 password: admin
+
+![Captura de Tela 2022-12-07 às 17 04 25](https://user-images.githubusercontent.com/29555732/206284202-c0994f24-02b9-4b6a-9fc3-3252a826a388.png)
