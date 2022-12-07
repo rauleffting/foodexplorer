@@ -1,4 +1,4 @@
-# :spaghetti: Food Explorer
+# :fork_and_knife: Food Explorer
 
 ## Front-end / FoodExplorer-API
 
