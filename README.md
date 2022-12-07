@@ -18,4 +18,5 @@ Feel free to test: foodexplorer-94.netlify.app
 #### Administrator credentials:
 
 email: admin@email.com
+
 password: admin
