@@ -12,7 +12,7 @@ export function Routes() {
     <BrowserRouter>
       { 
         user ? 
-        ( (user.is_admin === 1) ? <AppAdminRoutes /> : <AppRoutes />)
+       <AppRoutes />
         : <AuthRoutes /> 
       }
     </BrowserRouter>
