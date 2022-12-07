@@ -34,3 +34,11 @@ password: admin
 ### Food details page:
 
 ![Captura de Tela 2022-12-07 às 17 07 29](https://user-images.githubusercontent.com/29555732/206284752-24944d71-64bd-4532-8735-f77e38e49548.png)
+
+### Admin home page:
+
+![Captura de Tela 2022-12-07 às 17 10 45](https://user-images.githubusercontent.com/29555732/206285411-5bc9add1-d0ca-480c-8ba7-602f250a5af8.png)
+
+### Admin food registration page:
+
+![Captura de Tela 2022-12-07 às 17 12 14](https://user-images.githubusercontent.com/29555732/206285689-d2d9d9ca-9093-4ca0-96d9-3c1f11447519.png)
