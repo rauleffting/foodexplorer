@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import styled from 'styled-components';
+import styled, { ThemeConsumer } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -128,6 +128,19 @@ export const LinkSection = styled.button`
     text-align: center;
 
     color: ${({ theme }) => theme.COLORS.GRAY_200};
+  }
+`;
+
+export const ButtonFavorite = styled.button`
+  display: flex;
+  background: none;
+  border: none;
+
+  > svg {
+      width: 32px;
+      height: 32px;
+      
+      color: ${({ theme, favorite }) => favorite ? theme.COLORS.FAVORITE_BUTTON : theme.COLORS.CARD_ICONS};
   }
 `;
 

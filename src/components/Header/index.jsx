@@ -11,14 +11,14 @@ import receipt from '../../assets/receipt.svg';
 import { useAuth } from '../../hooks/auth';
 import { useNavigate } from 'react-router-dom';
 
-export function Header(){
+export function Header({search}){
   const { signOut } = useAuth();
   const navigation = useNavigate();
 
   function handleSignOut() {
     alert("Deseja mesmo sair?");
     signOut();
-    navigation("/");
+    navigation(-1);
   }
 
   function handleBackHome() {
@@ -40,10 +40,14 @@ export function Header(){
       >
           Meus favoritos
       </ButtonText>
-
+      
       <Search>
         <RiSearchLine />
-        <input type="text" placeholder="Busque pelas opções de pratos" />
+        <input 
+          type="text" 
+          placeholder="Busque pelas opções de pratos" 
+          onChange={event => search(event.target.value)}
+        />
       </Search>
 
       <Button

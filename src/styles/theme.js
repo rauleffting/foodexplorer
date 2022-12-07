@@ -27,6 +27,8 @@ export default {
     GRAY_100:"#E1E1E6",
 
     GRAYBUTTON_BG: "rgba(255, 255, 255, 0.1)",
-    REDBUTTON_BG: "#92000E"
+    REDBUTTON_BG: "#92000E",
+
+    FAVORITE_BUTTON: "#DC143C"
   }
 }

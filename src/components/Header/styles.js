@@ -12,6 +12,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: ${({ theme }) => theme.COLORS.BG_HEADERFOOTER};
+
+  @media(max-width: 1279px) {
+    
+  }
 `;
 
 export const Logo = styled.button`

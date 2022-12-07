@@ -14,7 +14,7 @@ import limao from  '../../assets/ingredients/limao.png';
 import maca from  '../../assets/ingredients/maca.png';
 import maracuja from  '../../assets/ingredients/maracuja.png';
 import massa from  '../../assets/ingredients/massa.png';
-import pao_naan from  '../../assets/ingredients/pao_naan.png';
+import paonaan from  '../../assets/ingredients/paonaan.png';
 import pao from '../../assets/ingredients/pao.png';
 import pepino from  '../../assets/ingredients/pepino.png';
 import pessego from  '../../assets/ingredients/pessego.png';
@@ -59,8 +59,8 @@ export function IngredientCard({name}){
           return ingredientPicture = maracuja;
         case "massa":
           return ingredientPicture = massa;
-        case "paonaan":
-          return ingredientPicture = pao_naan;
+        case "pao naan":
+          return ingredientPicture = paonaan;
         case "pao":
           return ingredientPicture = pao;
         case "pepino":

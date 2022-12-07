@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { Container, ButtonEdit, LinkSection } from './styles';
+import { Container, ButtonFavorite, ButtonEdit, LinkSection } from './styles';
 
-import { RiEditBoxLine, RiHeartLine, RiArrowDropRightLine, RiAddFill, RiSubtractFill } from 'react-icons/ri';
+import { RiEditBoxLine, RiHeartFill, RiHeartLine, RiArrowDropRightLine, RiAddFill, RiSubtractFill } from 'react-icons/ri';
 import parma from '../../assets/parma.png';
 
 import { Button } from '../Button';
@@ -18,7 +18,16 @@ export function Card({ data }){
 
   const pictureUrl = `${api.defaults.baseURL}/files/${data.picture}`;
 
+  const [favorite, setFavorite] = useState(false);
   const [quantity, setQuantity] = useState(1)
+
+  function handleFavorite() {
+    if(!favorite) {
+      setFavorite(true);
+    } else {
+      setFavorite(false);
+    }
+  }
 
   function handleEditFood() {
     navigation(`/editfood/${data.id}`);
@@ -41,7 +50,14 @@ export function Card({ data }){
   return(
     <Container>
       <div className="top-controls">
-        <RiHeartLine />
+        <ButtonFavorite
+          onClick={handleFavorite}
+          favorite={favorite}
+        >
+          {
+            favorite ? <RiHeartFill /> : <RiHeartLine />
+          }
+        </ButtonFavorite>
         {
           (user.is_admin == 1) && 
             <ButtonEdit

@@ -21,7 +21,7 @@ export function Home(){
 
   useEffect(() => {
       async function fetchFoods() {
-        const response = await api.get(`/foods?name=${search}`);
+        const response = await api.get(`/foods?name=${search}&ingredients=${search}`);
         setFoods(response.data);
   }
 
@@ -30,7 +30,7 @@ export function Home(){
 
   return(
     <Container>
-      <Header />
+      <Header search={setSearch}/>
       
       <Content className="content">
         <FrontCover>

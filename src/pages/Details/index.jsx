@@ -36,6 +36,16 @@ export function Details(){
     navigate(-1);
   }
 
+  function handleSum() {
+    setQuantity(quantity + 1);
+  }
+
+  function handleSub() {
+    if(quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  }
+
 
   return(
     <Container>
@@ -66,13 +76,19 @@ export function Details(){
             <div className="controls">
               <h3>R$ {data && data.price}</h3>
 
-              <button className="buttons-minus-plus">
+              <button 
+                className="buttons-minus-plus"
+                onClick={handleSub}
+              >
                 <RiSubtractFill />
               </button>
               
-              <span>01</span>
+              <span>{quantity}</span>
 
-              <button className="buttons-minus-plus">
+              <button 
+                className="buttons-minus-plus"
+                onClick={handleSum}  
+              >
                 <RiAddFill />
               </button>
 
