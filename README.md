@@ -6,7 +6,7 @@ A complete application with Reactjs and Node, in which the user can register inf
 
 Link to access the [Back-end](https://github.com/rauleffting/foodexplorer-api)!
 
-Feel free to test: https://foodexplorer94.netlify.app/
+Feel free to test: foodexplorer-94.netlify.app
 
 ### Front-end technologies used:
 - React
