@@ -1,6 +1,6 @@
 # :spaghetti: Food Explorer
 
-## Front-end / FoodExplorer
+## Front-end / FoodExplorer-API
 
 A complete application with Reactjs and Node, in which the admin can register dishes, deserts and drinks and the user can buy.
 
@@ -14,3 +14,8 @@ Feel free to test: foodexplorer-94.netlify.app
 - HTML
 - CSS
 - JavaScript
+
+#### Administrator credentials:
+
+email: admin@email.com
+password: admin
