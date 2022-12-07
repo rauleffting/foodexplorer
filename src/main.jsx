@@ -7,7 +7,7 @@ import theme from './styles/theme';
 
 import { AuthProvider } from './hooks/auth';
 
-import { Routes } from './routes';
+import { Routes } from './Routes';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
