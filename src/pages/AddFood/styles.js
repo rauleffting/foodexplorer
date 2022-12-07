@@ -46,12 +46,15 @@ export const Form = styled.form`
 
   .input-wrapper {
     display: flex;
+    align-items: center;
     gap: 32px;
 
     margin-bottom: 32px;
   }
 
   #picture-input {
+    padding: 0;
+    margin: 0;
     > span {
       font-family: 'Roboto';
       font-style: normal;
@@ -65,7 +68,7 @@ export const Form = styled.form`
     }
 
     > label {
-      height: 100%;
+      height: 55px;
 
       display: flex;
       align-items: center;
@@ -96,6 +99,8 @@ export const Form = styled.form`
         font-size: 14px;
         line-height: 24px;
 
+        white-space: nowrap;
+
         color: ${({ theme }) => theme.COLORS.WHITE};
       }
 
@@ -109,7 +114,7 @@ export const Form = styled.form`
     display: flex;
     align-items: center;
     justify-content: left;
-    height: 100%;
+    height: 55px;
     flex-wrap: wrap;
     border: 1px solid;
     border-color: ${({ theme }) => theme.COLORS.WHITE};
@@ -120,6 +125,49 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     flex: 1;
+
+    > label {
+      height: 100%;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+
+      color: ${({ theme }) => theme.COLORS.GRAY_200};
+
+      padding-bottom: 8px;
+    }
+
+    > select {
+      background: none;
+      
+      border: 1px solid;
+      border-color: ${({ theme }) => theme.COLORS.WHITE};
+      border-radius: 5px;
+
+      padding: 16px 14px;
+      height: 55px;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      
+      color: ${({ theme }) => theme.COLORS.WHITE};
+
+      /* Arrow */
+      appearance: none;
+      >svg {
+        color: white;
+      }
+      background-image: url("data:image/svg+xml,<svg fill='white' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path d='m0,6l12,12l12,-12l-24,0z'/><path fill='none' d='m0,0l24,0l0,24l-24,0l0,-24z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem top 50%;
+      background-size: 0.65rem auto;
+    }
   }
 
   .big-input {

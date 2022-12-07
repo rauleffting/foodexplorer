@@ -4,10 +4,7 @@ import { Container, Slider } from './styles';
 
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
-import { Card } from '../../components/Card';
-
-
-export function Section({ title }) {
+export function Section({ title, children }) {
   const slider = useRef(null);
 
   function handleLeftArrowClick(){
@@ -33,30 +30,7 @@ export function Section({ title }) {
           <IoIosArrowBack />
         </button>  
         <div ref={slider}>
-          <Card data={{
-            name: "Torradas de Parma",
-            description: "Presunto de parma e rúcula em um pão com fermentação natural.",
-            price: 25.97,
-            }}
-          />
-          <Card data={{
-            name: "Torradas de Parma",
-            description: "Presunto de parma e rúcula em um pão com fermentação natural.",
-            price: 25.97,
-            }}
-          />
-          <Card data={{
-            name: "Torradas de Parma",
-            description: "Presunto de parma e rúcula em um pão com fermentação natural.",
-            price: 25.97,
-            }}
-          />
-          <Card data={{
-            name: "Torradas de Parma",
-            description: "Presunto de parma e rúcula em um pão com fermentação natural.",
-            price: 25.97,
-            }}
-          />
+          {children}
         </div>
         <button 
           className="arrow-forward"

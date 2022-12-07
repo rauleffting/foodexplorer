@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { api } from '../../services/api';
+
 import { Container, Content } from './styles';
 
 import { RiAddFill, RiSubtractFill } from 'react-icons/ri';
@@ -9,11 +12,30 @@ import { IngredientCard } from '../../components/IngredientCard';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 
-import parma from '../../assets/parma.png';
 import receipt from '../../assets/receipt.svg';
 
 export function Details(){
-  const { quantity, setQuantity } = useState(1);
+  const [quantity, setQuantity] = useState(1)
+
+  const [data, setData] = useState(null);
+  const params = useParams();
+  const navigate = useNavigate();
+
+  const pictureUrl = data && `${api.defaults.baseURL}/files/${data.picture}`;
+  
+  useEffect(() => {
+    async function fetchFood() {
+      const response = await api.get(`/foods/${params.id}`);
+      setData(response.data);
+    }
+
+    fetchFood();
+  }, []);
+  
+  function handleBack(){
+    navigate(-1);
+  }
+
 
   return(
     <Container>
@@ -21,29 +43,28 @@ export function Details(){
 
       <Content className="content">
         <ButtonBack 
-          to="/"
+          onClick={handleBack}
         />
 
         <div className="details-wrapper">
-          <img src={parma} alt="food picture"/>
+          <img src={pictureUrl} alt="food picture"/>
 
           <div className="food-details">
-            <h2>Torradas de Parma</h2>
-            <span>Presunto de parma e rúcula em um pão com fermentação natural.</span>
+            <h2>{data && data.name}</h2>
+            <span>{data && data.description}</span>
             <div className="ingredients">
-              <IngredientCard
-              name="pão"
-              /> 
-              <IngredientCard
-              name="presunto"
-              /> 
-              <IngredientCard
-              name="rúcula"
-              /> 
+              {
+                data && data.ingredients.map(ingredient => (
+                  <IngredientCard 
+                  key={String(ingredient.id)}
+                  name={ingredient.name}
+                  />
+                ))
+              }
             </div>
 
             <div className="controls">
-              <h3>R$ 25.97</h3>
+              <h3>R$ {data && data.price}</h3>
 
               <button className="buttons-minus-plus">
                 <RiSubtractFill />

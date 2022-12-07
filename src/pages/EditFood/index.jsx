@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { api } from '../../services/api';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { Container, Content, Form } from './styles';
 
@@ -12,10 +14,37 @@ import { Footer } from '../../components/Footer';
 import { RiUpload2Line } from 'react-icons/ri';
 
 export function EditFood() {
+  const navigate = useNavigate();
+  const params = useParams();
+
+  const [data, setData] = useState(null)
+
+  const [category, setCategory] = useState("");
+  const [pictureFile, setPictureFile] = useState(null);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+
   const [width, setWidth] = useState(13);
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
 
+  useEffect(() => {
+    async function fetchFood() {
+      const response = await api.get(`/foods/${params.id}`);
+      const { category, picture, name, price, description, ingredients } = response.data
+      setCategory(category);
+      setPictureFile(picture);
+      setName(name);
+      setPrice(price);
+      setDescription(description);
+      setIngredients(ingredients.map(ingredient => ingredient.name));
+    }
+
+    fetchFood();
+  }, []);
+
+  /* ingredients */
   function handleChange(event) {
     setWidth(event.target.value.length + 0.4);
     setNewIngredient(event.target.value)
@@ -31,12 +60,35 @@ export function EditFood() {
     setIngredients(prevState => prevState.filter(ingredient => ingredient != removedIngredient))
   }
 
+  /* picture */
+  function handlePictureFile() {
+    const file = event.target.files[0];
+
+    setPictureFile(file);
+  }
+
   function handleEditFood() {
-    alert('Prato editado com sucesso!')
+    if((category === 'selecionar') || !name || !ingredients || !price || !description) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
+    api.put(`/foods/${params.id}`, { category, name, price, description, ingredients });
+    
+    const formData = new FormData();
+    formData.append("picture", pictureFile);
+
+    api.patch(`/foods/picture/${params.id}`, formData)
+    .then(() => {
+      alert("Prato editado com sucesso!");
+      navigate(-1);
+    });
   }
 
   function handleDelete() {
-    alert('Prato deletado com sucesso!')
+    alert('Deseja mesmo deletar?');
+
+    alert('Prato deletado com sucesso');
   }
 
   return(
@@ -60,7 +112,7 @@ export function EditFood() {
                   <input 
                     type="file" 
                     id="food-picture" 
-                    onChange={() => {}}
+                    onChange={handlePictureFile}
                   />
                   <span>Selecionar imagem</span>
                 </label>
@@ -71,6 +123,8 @@ export function EditFood() {
                   label="Nome"
                   placeholder="Ex.: Salada Ceasar"
                   type="text"
+                  value={name}
+                  onChange={ event => setName(event.target.value) }
                 />
               </div>
             </div>
@@ -84,7 +138,7 @@ export function EditFood() {
                       <FoodItem 
                         key={String(index)}
                         value={ingredient}
-                        width={ingredient.length}
+                        width={ingredient.length + 0.4}
                         onClick={() => handleRemove(ingredient)}
                       />
                     ))
@@ -105,6 +159,8 @@ export function EditFood() {
                   label="Preço"
                   placeholder="R$ 00,00"
                   type="text"
+                  value={price}
+                  onChange={ event => setPrice(event.target.value) }
                 />
               </div>
             </div>
@@ -118,6 +174,8 @@ export function EditFood() {
                 cols="30" 
                 rows="10" 
                 placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                value={description}
+                onChange={ event => setDescription(event.target.value) }
                 />
             </div>
           </fieldset>

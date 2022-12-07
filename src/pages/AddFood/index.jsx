@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { api } from '../../services/api';
+import { useNavigate } from 'react-router-dom';
 
 import { Container, Content, Form } from './styles';
 
@@ -9,13 +11,22 @@ import { FoodItem } from '../../components/FoodItem';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 
-import { RiUpload2Line } from 'react-icons/ri';
+import { RiUpload2Line, RiArrowDownSLine } from 'react-icons/ri';
 
 export function AddFood() {
+  const navigate = useNavigate();
+
+  const [category, setCategory] = useState("");
+  const [pictureFile, setPictureFile] = useState(null);
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
+
   const [width, setWidth] = useState(13);
   const [ingredients, setIngredients] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
 
+  /* ingredients */
   function handleChange(event) {
     setWidth(event.target.value.length + 0.4);
     setNewIngredient(event.target.value)
@@ -31,8 +42,35 @@ export function AddFood() {
     setIngredients(prevState => prevState.filter(ingredient => ingredient != removedIngredient))
   }
 
+  /* picture */
+  function handlePictureFile() {
+    const file = event.target.files[0];
+    setPictureFile(file);
+  }
+
+  /* add food */
   function handleAddFood() {
-    alert('Prato adicionado com sucesso!')
+    if((category === 'selecionar') || !name || !ingredients || !price || !description) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("category", category);
+    formData.append("picture", pictureFile);
+    formData.append("name", name);
+    formData.append("price", price);
+    formData.append("description", description);
+
+    ingredients.map(ingredient => (
+        formData.append("ingredients", ingredient)
+    ))
+
+    api.post("/foods", formData)
+    .then(() => {
+      alert("Prato criado com sucesso!");
+      navigate(-1);
+    })
   }
 
   return(
@@ -44,7 +82,7 @@ export function AddFood() {
 
         <Form>
           <header>
-            Adicionar prato
+            Criar novo prato
           </header>
 
           <fieldset>
@@ -56,10 +94,24 @@ export function AddFood() {
                   <input 
                     type="file" 
                     id="food-picture" 
-                    onChange={() => {}}
+                    onChange={handlePictureFile}
                   />
                   <span>Selecionar imagem</span>
                 </label>
+              </div>
+
+              <div className="small-input">
+                <label for="category">Categoria</label>
+                <select 
+                  id="category" 
+                  name="category"
+                  onChange={ event => setCategory(event.target.value)}
+                >
+                  <option value="selecionar">Selecionar</option>
+                  <option value="prato_principal">Prato principal</option>
+                  <option value="sobremesa">Sobremesa</option>
+                  <option value="bebida">Bebida</option>
+                </select>
               </div>
 
               <div className="big-input">
@@ -67,6 +119,7 @@ export function AddFood() {
                   label="Nome"
                   placeholder="Ex.: Salada Ceasar"
                   type="text"
+                  onChange={ event => setName(event.target.value) }
                 />
               </div>
             </div>
@@ -80,7 +133,7 @@ export function AddFood() {
                       <FoodItem 
                         key={String(index)}
                         value={ingredient}
-                        width={ingredient.length}
+                        width={ingredient.length + 0.4}
                         onClick={() => handleRemove(ingredient)}
                       />
                     ))
@@ -101,6 +154,7 @@ export function AddFood() {
                   label="Preço"
                   placeholder="R$ 00,00"
                   type="text"
+                  onChange={ event => setPrice(event.target.value) }
                 />
               </div>
             </div>
@@ -114,6 +168,7 @@ export function AddFood() {
                 cols="30" 
                 rows="10" 
                 placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                onChange={ event => setDescription(event.target.value) }
                 />
             </div>
           </fieldset>
@@ -122,7 +177,7 @@ export function AddFood() {
             <Button
               onClick={handleAddFood}
             >
-            <span>Adicionar prato</span> 
+            <span>Criar</span> 
             </Button>
           </div>
         </Form>

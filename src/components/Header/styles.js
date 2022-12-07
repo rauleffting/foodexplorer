@@ -14,11 +14,15 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.BG_HEADERFOOTER};
 `;
 
-export const Logo = styled(Link)`
+export const Logo = styled.button`
   display: flex;
   align-items: center;
   gap: 11.2px;
   padding-right: 5px;
+
+  background: none;
+  border: none;
+  
   > svg {
     width: 29.2px;
     height: 29.2px;

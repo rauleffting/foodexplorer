@@ -18,6 +18,8 @@ export const Container = styled.div`
   }
 
   > input {
+    height: 55px;
+    
     background: none;
 
     border: 1px solid;

@@ -5,7 +5,6 @@ export function Button({ children, icon, isRed, to, ...rest}) {
     <Container
       type="button"
       isRed={isRed}
-      to={to}
       {...rest}
     >
       {children}

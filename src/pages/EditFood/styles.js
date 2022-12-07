@@ -183,6 +183,7 @@ export const Form = styled.form`
   .button-wrapper {
     display: flex;
     justify-content: space-between;
+    gap: 180px;
 
     >   button {
       width: 357px;

@@ -8,16 +8,27 @@ import { RiSearchLine, RiUser3Line, RiLogoutBoxRLine } from "react-icons/ri";
 import polygon from '../../assets/polygon.svg';
 import receipt from '../../assets/receipt.svg';
 
+import { useAuth } from '../../hooks/auth';
+import { useNavigate } from 'react-router-dom';
+
 export function Header(){
+  const { signOut } = useAuth();
+  const navigation = useNavigate();
 
   function handleSignOut() {
-    alert('Deseja mesmo sair?')
+    alert("Deseja mesmo sair?");
+    signOut();
+    navigation("/");
+  }
+
+  function handleBackHome() {
+    navigation("/")
   }
 
   return(
     <Container>
       <Logo
-        to="/"
+        onClick={handleBackHome}
       >
         <img src={polygon} alt="logo" />
         <span>

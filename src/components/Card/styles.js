@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 300px;
+  min-width: 300px;
   height: 512px;
 
   background-color: ${({ theme }) => theme.COLORS.CARD_BG};
@@ -86,10 +86,13 @@ export const Container = styled.div`
 `;
 
 
-export const LinkSection = styled(Link)`
+export const LinkSection = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  background: none;
+  border: none;
 
   > img {
     width: 176px;
@@ -125,5 +128,18 @@ export const LinkSection = styled(Link)`
     text-align: center;
 
     color: ${({ theme }) => theme.COLORS.GRAY_200};
+  }
+`;
+
+export const ButtonEdit = styled.button`
+  display: flex;
+  background: none;
+  border: none;
+
+  > svg {
+      width: 32px;
+      height: 32px;
+
+      color: ${({ theme }) => theme.COLORS.CARD_ICONS};
   }
 `;
