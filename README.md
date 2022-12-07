@@ -2,7 +2,7 @@
 
 ## Front-end / FoodExplorer
 
-A complete application with Reactjs and Node, in which the user can register information about his favorite movies.
+A complete application with Reactjs and Node, in which the admin can register dishes, deserts and drinks and the user can buy.
 
 Link to access the [Back-end](https://github.com/rauleffting/foodexplorer-api)!
 
