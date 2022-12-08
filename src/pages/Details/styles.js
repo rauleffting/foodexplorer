@@ -115,4 +115,66 @@ export const Content = styled.main`
       }
     }
   }
+
+  @media(max-width: 1279px) {
+    .details-wrapper {
+      flex-direction: column;
+
+      padding: 18px 64px 0;
+
+      > img {
+        width: 220px;
+        height: 220px;
+      }
+
+      .food-details {
+      padding-top: 18px;
+
+      > h2 {
+        font-size: 32px;
+        line-height: 100%;
+      }
+
+      > span {
+        font-size: 16px;
+        line-height: 100%;
+      }
+
+      .ingredients {
+        margin-top: 32px;
+      }
+
+      .controls {
+        margin-top: 32px;
+
+        > h3 {
+          margin-right: 24px;
+
+          font-size: 24px;
+          line-height: 100%;
+        }
+
+        .buttons-minus-plus {
+          margin-right: 8px;
+          
+          svg {
+            height: 16px;
+            width: 16px;
+          }
+        }
+
+        > span {
+          font-size: 16px;
+          line-height: 100%;
+
+          margin-right: 8px;
+        }
+
+        > button:last-child {
+          margin-left: 8px;
+        }
+      }
+    }
+    }
+  }
 `;
