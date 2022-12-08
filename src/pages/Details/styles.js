@@ -116,8 +116,9 @@ export const Content = styled.main`
     }
   }
 
-  @media(max-width: 750px) {
+  @media(max-width: 1279px) {
     .details-wrapper {
+      align-items: center;
       flex-direction: column;
 
       padding: 18px 64px 0;
@@ -173,6 +174,10 @@ export const Content = styled.main`
         > button:last-child {
           margin-left: 8px;
         }
+      }
+
+      .button-include {
+        max-width: 350px;
       }
     }
     }

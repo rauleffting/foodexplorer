@@ -94,6 +94,7 @@ export function Details(){
 
               <Button
                 isRed
+                className="button-include"
               >
                 <img src={receipt} alt="receipt" />
                 <span>Incluir</span>
