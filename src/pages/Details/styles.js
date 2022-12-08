@@ -116,7 +116,7 @@ export const Content = styled.main`
     }
   }
 
-  @media(max-width: 1279px) {
+  @media(max-width: 750px) {
     .details-wrapper {
       flex-direction: column;
 
