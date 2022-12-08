@@ -97,4 +97,16 @@ export const Content = styled.main`
       margin-right: 8px;
     }
   }
+
+  @media(max-width: 1278px) {
+  > h2 {
+    padding: 34.29px 64px;
+  }
+
+  table {
+    max-width: 1132px;
+    margin: 0 64px;
+    padding-bottom: 54px;
+  }
+  }
 `;
