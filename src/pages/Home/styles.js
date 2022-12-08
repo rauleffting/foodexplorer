@@ -9,9 +9,18 @@ export const Container = styled.div`
   "header"
   "main";
 
-  .content::-webkit-scrollbar {
+  .desktop-content::-webkit-scrollbar {
     display: none;
   }
+
+  .mobile-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-content {
+    display: none;
+  }
+
 `;
 
 export const Content = styled.main`
@@ -75,5 +84,9 @@ export const FrontCover = styled.section`
         color: ${({ theme }) => theme.COLORS.GRAY_100};
       }
     }
+  }
+
+  @media(max-width: 1279px) {
+    display: none;
   }
 `;

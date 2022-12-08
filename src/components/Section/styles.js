@@ -7,18 +7,57 @@ export const Container = styled.section`
 
   margin: 62px 122px 0px 122px;
 
-  > h2 {
-    margin-bottom: 39.5px;
+  .desktop {
+    display: flex;
+    flex-direction: column;
 
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 140%;
+    > h2 {
+      margin-bottom: 39.5px;
 
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 140%;
+
+      color: ${({ theme }) => theme.COLORS.GRAY_100};
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  @media(max-width: 750px) {
+    .desktop {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
+
+      display: flex;
+      flex-direction: column;
+
+      > h2 {
+        margin-bottom: 39.5px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 140%;
+
+        color: ${({ theme }) => theme.COLORS.GRAY_100};
+      }
+
+      > div {
+        margin-bottom: 16px;
+      }
+    }
   }
 `;
+
 
 export const Slider = styled.div`
   display: flex;

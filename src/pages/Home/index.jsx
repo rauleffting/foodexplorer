@@ -32,7 +32,7 @@ export function Home(){
     <Container>
       <Header search={setSearch}/>
       
-      <Content className="content">
+      <Content className="desktop-content">
         <FrontCover>
           <img src={front_cover} alt="cover" />
           <div className="frontcover-background">

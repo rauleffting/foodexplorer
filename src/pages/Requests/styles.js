@@ -88,11 +88,13 @@ export const Content = styled.main`
   }
 
   table td:first-child {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    white-space: nowrap;
 
     border-left: 2px solid;
     border-color: ${({ theme }) => theme.COLORS.TABLE_BORDER};
+
+    > svg {
+      margin-right: 8px;
+    }
   }
 `;

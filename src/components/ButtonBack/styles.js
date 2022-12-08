@@ -27,4 +27,8 @@ export const Container = styled.button`
 
     color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
+
+  @media(max-width: 1279px) {
+    padding-left: 64px;
+  }
 `;

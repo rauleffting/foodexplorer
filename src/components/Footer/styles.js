@@ -1,17 +1,45 @@
 import styled from 'styled-components';
 
 export const Container = styled.footer`
-  grid-area: footer;
   width: 100%;
-  height: 77px;
-  margin-top: 98px;
-  padding: 0 123px;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .desktop {
+    width: 100%;
+    height: 77px;
+    margin-top: 98px;
+    padding: 0 123px;
 
-  background-color: ${({ theme }) => theme.COLORS.BG_HEADERFOOTER};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: ${({ theme }) => theme.COLORS.BG_HEADERFOOTER};
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  @media(max-width: 1279px) {
+    .desktop {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
+
+      width: 100%;
+      height: 64px;
+      margin-top: 48px;
+      padding: 0 64px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background-color: ${({ theme }) => theme.COLORS.BG_HEADERFOOTER};
+    }
+  }
 `;
 
 export const Logo = styled.div`
@@ -30,6 +58,20 @@ export const Logo = styled.div`
 
     color: ${({ theme }) => theme.COLORS.FOOTER_LOGO}
   }  
+
+  @media(max-width: 1279px) { 
+    margin: 16px 0;
+    
+    > span {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 21px;
+
+      color: ${({ theme }) => theme.COLORS.FOOTER_LOGO}
+    }
+  }
 `;
 
 export const Copyright = styled.span`

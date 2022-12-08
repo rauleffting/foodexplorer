@@ -38,10 +38,14 @@ export const Form = styled.form`
     padding-bottom: 32px;
   }
 
-  > fieldset {
+  > fieldset.desktop {
     display: flex;
     flex-direction: column;
     border:none;
+  }
+
+  > fieldset.mobile {
+    display: none;
   }
 
   .input-wrapper {
@@ -235,6 +239,20 @@ export const Form = styled.form`
     >   button {
       width: 357px;
       height: 48px;
+    }
+  }
+
+  @media(max-width: 880px) {
+    > fieldset.desktop {
+      display: none;
+    }
+
+    > fieldset.mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      border: none;
     }
   }
 `;

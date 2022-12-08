@@ -21,24 +21,32 @@ export function Section({ title, children }) {
 
   return(
     <Container>
-      <h2>{title}</h2>
-      <Slider className="content"> 
-        <button 
-          className="arrow-back"
-          onClick={handleLeftArrowClick}
-          >
-          <IoIosArrowBack />
-        </button>  
-        <div ref={slider}>
-          {children}
-        </div>
-        <button 
-          className="arrow-forward"
-          onClick={handleRightArrowClick}
-          >
-          <IoIosArrowForward />
-        </button>
-      </Slider>
+      <div className="desktop">
+        <h2>{title}</h2>
+        <Slider className="content"> 
+          <button 
+            className="arrow-back"
+            onClick={handleLeftArrowClick}
+            >
+            <IoIosArrowBack />
+          </button>  
+          <div ref={slider}>
+            {children}
+          </div>
+          <button 
+            className="arrow-forward"
+            onClick={handleRightArrowClick}
+            >
+            <IoIosArrowForward />
+          </button>
+        </Slider>
+      </div>
+
+      <div className="mobile">
+        <h2>{title}</h2>
+        {children}
+      </div>
+
     </Container>
   );
 }
