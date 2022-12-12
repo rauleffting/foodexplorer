@@ -21,7 +21,7 @@ export function Home(){
 
   useEffect(() => {
       async function fetchFoods() {
-        const response = await api.get(`/foods?name=${search}&ingredients=${search}`);
+        const response = await api.get(`/foods?name=${search}`);
         setFoods(response.data);
   }
 
