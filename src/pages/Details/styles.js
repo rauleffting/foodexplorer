@@ -23,7 +23,7 @@ export const Content = styled.main`
   .details-wrapper {
     display: flex;
     gap: 41px;
-    padding: 18px 122px 0;
+    padding: 18px 122px 64px;
 
     > img {
     width: 389px;

@@ -35,6 +35,7 @@ export const Content = styled.main`
   }
 
   table {
+    flex: 1;
     max-width: 1132px;
     margin: 0 123px;
     border-spacing: 0;
@@ -104,9 +105,10 @@ export const Content = styled.main`
   }
 
   table {
+    flex: 1;
     max-width: 1132px;
     margin: 0 64px;
-    padding-bottom: 54px;
+    padding-bottom: 64px;
   }
   }
 `;
