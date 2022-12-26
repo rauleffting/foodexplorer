@@ -69,7 +69,7 @@ export function EditFood() {
 
   function handleEditFood() {
     if((category === 'selecionar') || !name || !ingredients || !price || !description) {
-      alert("Preencha todos os campos!");
+      alert("Fill in all fields!");
       return;
     }
 
@@ -80,15 +80,15 @@ export function EditFood() {
 
     api.patch(`/foods/picture/${params.id}`, formData)
     .then(() => {
-      alert("Prato editado com sucesso!");
+      alert("Dish edited successfully!");
       navigate(-1);
     });
   }
 
   function handleDelete() {
-    alert('Deseja mesmo deletar?');
+    alert('Do you really want to delete?');
 
-    alert('Prato deletado com sucesso');
+    alert('Dish deleted successfully!');
   }
 
   return(
@@ -100,13 +100,13 @@ export function EditFood() {
 
         <Form>
           <header>
-            Editar prato
+            Edit Dish
           </header>
 
           <fieldset className="desktop">
             <div className="input-wrapper">
               <div className="small-input" id="picture-input">
-                <span>Imagem do prato</span>
+                <span>Dish image</span>
                 <label htmlFor="food-picture">
                   <RiUpload2Line />
                   <input 
@@ -114,30 +114,29 @@ export function EditFood() {
                     id="food-picture" 
                     onChange={handlePictureFile}
                   />
-                  <span>Selecionar imagem</span>
+                  <span>Select Image</span>
                 </label>
               </div>
 
               <div className="small-input">
-                <label for="category">Categoria</label>
+                <label for="category">Category</label>
                 <select 
                   id="category" 
                   name="category"
                   onChange={ event => setCategory(event.target.value)}
                 >
-                  <option value="selecionar">Selecionar</option>
-                  <option value="prato_principal">Prato principal</option>
-                  <option value="sobremesa">Sobremesa</option>
-                  <option value="bebida">Bebida</option>
+                  <option value="select">Select</option>
+                  <option value="main_course">Main course</option>
+                  <option value="dessert">Dessert</option>
+                  <option value="drink">Drink</option>
                 </select>
               </div>
 
               <div className="big-input">
                 <Input 
-                  label="Nome"
-                  placeholder="Ex.: Salada Ceasar"
+                  label="Name"
+                  placeholder="Ex.: Ceasar Salad"
                   type="text"
-                  value={name}
                   onChange={ event => setName(event.target.value) }
                 />
               </div>
@@ -145,7 +144,7 @@ export function EditFood() {
               
             <div className="input-wrapper">
               <div className="big-input">
-                <span>Ingredientes</span>
+                <span>Ingredients</span>
                 <div id="ingredient-input">
                   {
                     ingredients.map((ingredient, index) => (
@@ -159,7 +158,7 @@ export function EditFood() {
                   }
                   <FoodItem 
                     isNew
-                    placeholder="Adicionar"
+                    placeholder="Add"
                     value={newIngredient}
                     onChange={ handleChange }
                     onClick={ handleAddIngredient }
@@ -170,8 +169,8 @@ export function EditFood() {
 
               <div className="small-input">
                 <Input 
-                  label="Preço"
-                  placeholder="R$ 00,00"
+                  label="Price"
+                  placeholder="$ 00,00"
                   type="text"
                   value={price}
                   onChange={ event => setPrice(event.target.value) }
@@ -181,13 +180,13 @@ export function EditFood() {
               
 
             <div className="text-area">
-                <label>Descrição</label>
+                <label>Description</label>
                 <textarea 
                 name="" 
                 id="" 
                 cols="30" 
                 rows="10" 
-                placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                placeholder="Briefly write about the dish, its ingredients and composition"
                 value={description}
                 onChange={ event => setDescription(event.target.value) }
                 />
@@ -196,7 +195,7 @@ export function EditFood() {
 
           <fieldset className="mobile">
             <div className="small-input" id="picture-input">
-              <span>Imagem do prato</span>
+              <span>Dish image</span>
               <label htmlFor="food-picture">
                 <RiUpload2Line />
                 <input 
@@ -204,35 +203,35 @@ export function EditFood() {
                   id="food-picture" 
                   onChange={handlePictureFile}
                 />
-                <span>Selecionar imagem</span>
+                <span>Select Image</span>
               </label>
             </div>
 
             <div className="small-input">
-              <label for="category">Categoria</label>
+              <label for="category">Category</label>
               <select 
                 id="category" 
                 name="category"
                 onChange={ event => setCategory(event.target.value)}
               >
-                <option value="selecionar">Selecionar</option>
-                <option value="prato_principal">Prato principal</option>
-                <option value="sobremesa">Sobremesa</option>
-                <option value="bebida">Bebida</option>
+                <option value="select">Select</option>
+                <option value="main_course">Main course</option>
+                <option value="dessert">Dessert</option>
+                <option value="drink">Drink</option>
               </select>
             </div>
 
             <div className="big-input">
               <Input 
-                label="Nome"
-                placeholder="Ex.: Salada Ceasar"
+                label="Name"
+                placeholder="Ex.: Ceasar Salad"
                 type="text"
                 onChange={ event => setName(event.target.value) }
               />
             </div>
               
             <div className="big-input">
-              <span>Ingredientes</span>
+              <span>Ingredients</span>
               <div id="ingredient-input">
                 {
                   ingredients.map((ingredient, index) => (
@@ -246,7 +245,7 @@ export function EditFood() {
                 }
                 <FoodItem 
                   isNew
-                  placeholder="Adicionar"
+                  placeholder="Add"
                   value={newIngredient}
                   onChange={ handleChange }
                   onClick={ handleAddIngredient }
@@ -257,8 +256,8 @@ export function EditFood() {
 
             <div className="small-input">
               <Input 
-                label="Preço"
-                placeholder="R$ 00,00"
+                label="Price"
+                placeholder="$ 00,00"
                 type="text"
                 onChange={ event => setPrice(event.target.value) }
               />
@@ -266,13 +265,13 @@ export function EditFood() {
               
 
             <div className="text-area">
-                <label>Descrição</label>
+                <label>Description</label>
                 <textarea 
                 name="" 
                 id="" 
                 cols="30" 
                 rows="10" 
-                placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                placeholder="Briefly write about the dish, its ingredients and composition"
                 onChange={ event => setDescription(event.target.value) }
                 />
             </div>
@@ -283,13 +282,13 @@ export function EditFood() {
               onClick={handleDelete}
               isRed
             >
-              <span>Deletar prato</span> 
+              <span>Delete dish</span> 
             </Button>     
 
             <Button
               onClick={handleEditFood}
             >
-              <span>Editar prato</span> 
+              <span>Edit dish</span> 
             </Button>
           </div>
         </Form>

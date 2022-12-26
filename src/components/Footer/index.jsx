@@ -14,7 +14,7 @@ export function Footer() {
         </Logo>
 
         <Copyright>
-          © 2022 - Todos os direitos reservados.
+          © 2022 - All rights reserved.
         </Copyright>
       </div>
 
@@ -28,7 +28,7 @@ export function Footer() {
         </Logo>
 
         <Copyright>
-          © 2022 - Todos os direitos reservados.
+          © 2022 - All rights reserved.
         </Copyright>
       </div>
     </Container>

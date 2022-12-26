@@ -23,7 +23,7 @@ export function Header({search}){
   }
 
   function handleSignOut() {
-    alert("Deseja mesmo sair?");
+    alert("Do you really want to leave?");
     signOut();
     navigation("/");
   }
@@ -50,14 +50,14 @@ export function Header({search}){
       <ButtonText
         isMyFavorites
       >
-          Meus favoritos
+          Favorites
       </ButtonText>
       
       <Search>
         <RiSearchLine />
         <input 
           type="text" 
-          placeholder="Busque pelas opções de pratos" 
+          placeholder="Search" 
           onChange={event => search(event.target.value)}
         />
       </Search>
@@ -66,7 +66,7 @@ export function Header({search}){
         isRed
       >
         <img src={receipt} alt="receipt" />
-        <span>Meu pedido (0)</span>
+        <span>Cart (0)</span>
       </Button>
 
       <IconButton
@@ -95,7 +95,7 @@ export function Header({search}){
           <RiSearchLine />
           <input 
             type="text" 
-            placeholder="Pesquisar..." 
+            placeholder="Search..." 
             onChange={event => search(event.target.value)}
           />
         </Search>
@@ -109,16 +109,16 @@ export function Header({search}){
         <Sidebar showSidebar={showSidebar}>
           <ul>
             <li>
-              <a href="">Meus favoritos</a>
+              <a href="">Favorites</a>
             </li>
             <li>
-              <a href="">Meu pedido (0)</a>
+              <a href="">Cart (0)</a>
             </li>
             <li>
-              <a onClick={handleProfile}>Perfil</a>
+              <a onClick={handleProfile}>Profile</a>
             </li>
             <li>
-              <a onClick={handleSignOut}>Sair</a>
+              <a onClick={handleSignOut}>Sign Out</a>
             </li>
           </ul>
         </Sidebar>

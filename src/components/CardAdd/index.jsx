@@ -18,7 +18,7 @@ export function CardAdd({ data }){
     <Container
       onClick={handleAddFood}
     >
-      <span>Criar novo prato</span>
+      <span>Criate new dish</span>
       <RiAddCircleLine />
     </Container>
   );

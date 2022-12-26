@@ -37,17 +37,17 @@ export function Home(){
           <img src={front_cover} alt="cover" />
           <div className="frontcover-background">
             <div>
-              <h2>Sabores inigualáveis</h2>
-              <span>Sinta o cuidado do preparo com ingredientes selecionados</span>
+              <h2>Unimaginable flavors</h2>
+              <span>Feel the care of the preparation with selected ingredients</span>
             </div>
           </div> 
         </FrontCover>
-        <Section title="Pratos principais">
+        <Section title="Main course">
           {
             (user.is_admin == 1) && <CardAdd />
           }
           {
-            foods.filter(food => food.category == "prato_principal").map( food => (
+            foods.filter(food => food.category == "main_course").map( food => (
               <Card 
                 key={String(food.id)}
                 data={food}
@@ -56,12 +56,12 @@ export function Home(){
           }
         </Section>
 
-        <Section title="Sobremesas">
+        <Section title="Desserts">
           {
             (user.is_admin == 1) && <CardAdd />
           }
           {
-            foods.filter(food => food.category == "sobremesa").map( food => (
+            foods.filter(food => food.category == "dessert").map( food => (
               <Card 
                 key={String(food.id)}
                 data={food}
@@ -69,12 +69,12 @@ export function Home(){
             ))
           }
         </Section>
-        <Section title="Bebidas">
+        <Section title="Drinks">
           {
             (user.is_admin == 1) && <CardAdd />
           }
           {
-            foods.filter(food => food.category == "bebida").map( food => (
+            foods.filter(food => food.category == "drink").map( food => (
               <Card 
                 key={String(food.id)}
                 data={food}

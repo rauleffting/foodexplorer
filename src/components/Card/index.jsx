@@ -96,7 +96,7 @@ export function Card({ data }){
         </button>
         
         <Button isRed>
-          <span>Incluir</span>
+          <span>Include</span>
         </Button>
       </div>
     </Container>

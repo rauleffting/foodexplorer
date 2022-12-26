@@ -74,7 +74,7 @@ export function Details(){
             </div>
 
             <div className="controls">
-              <h3>R$ {data && data.price}</h3>
+              <h3>$ {data && data.price}</h3>
 
               <button 
                 className="buttons-minus-plus"
@@ -97,7 +97,7 @@ export function Details(){
                 className="button-include"
               >
                 <img src={receipt} alt="receipt" />
-                <span>Incluir</span>
+                <span>Include</span>
               </Button>
             </div>
           </div>

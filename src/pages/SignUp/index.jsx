@@ -19,19 +19,19 @@ export function SignUp() {
 
   function handleSignUp(){
     if(!name || !email || !password) {
-      alert("Preencha todos os campos!");
+      alert("Fill in all fields!");
     }
 
     api.post("/users", { name, email, password })
     .then(() => {
-      alert("Usuário cadastrado com sucesso!");
+      alert("User successfully registered!");
       navigate("/");
     })
     .catch(error => {
       if(error.response){
         alert(error.response.data.message);
       } else {
-        alert("Não foi possível cadastrar.");
+        alert("Unable to register.");
       }
     })
   }
@@ -45,35 +45,35 @@ export function SignUp() {
 
       <Form>
         <header>
-          Crie sua conta
+          Create your account
         </header>
         <Input 
-          label="Seu nome"
-          placeholder="Exemplo: Maria da Silva"
+          label="Your name"
+          placeholder="Example: John Smith"
           onChange={event => setName(event.target.value)}
         />
         <Input 
           label="Email"
-          placeholder="Exemplo: exemplo@exemplo.com.br"
+          placeholder="Example: example@example.com.br"
           onChange={event => setEmail(event.target.value)}
         />
         <Input 
-          label="Senha"
+          label="Password"
           type="password"
-          placeholder="No mínimo 6 caracteres"
+          placeholder="At least 6 characters"
           onChange={event => setPassword(event.target.value)}
         />
         <Button
           isRed
           onClick={handleSignUp}
         >
-          <span>Criar conta</span>
+          <span>Create account</span>
         </Button>
 
         <ButtonText
           to="/"
         >
-          <span>Já tenho uma conta</span>
+          <span>Already have an account?</span>
         </ButtonText>
       </Form>
     </Container>

@@ -16,7 +16,7 @@ export function ButtonBack({ to }) {
       onClick={handleBack}
     >
       <IoIosArrowBack />
-      <span>voltar</span>
+      <span>back</span>
     </Container>
   );
 }

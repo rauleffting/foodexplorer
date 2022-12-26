@@ -59,7 +59,7 @@ export function Profile() {
         <div className="content-wrapper">
           <Form>
             <header>
-              <span>Detalhes da conta</span>
+              <span>Account details</span>
             </header>
             <Avatar>
               <img 
@@ -80,7 +80,7 @@ export function Profile() {
 
             <div className="input-wrapper">
               <Input 
-                label="Nome"
+                label="Name"
                 type="text"
                 placeholder={user.name}
                 value={name}
@@ -96,23 +96,23 @@ export function Profile() {
               />
 
               <Input 
-                label="Senha atual"
+                label="Old password"
                 type="password"
-                placeholder="Digite sua senha"
+                placeholder="Type your password"
                 onChange={event => setPasswordOld(event.target.value)}
               />
 
               <Input 
-                label="Nova senha"
+                label="New password"
                 type="password"
-                placeholder="Digte sua nova senha"
+                placeholder="Type your new password"
                 onChange={event => setPasswordNew(event.target.value)}
               />
             </div>
 
 
             <Button onClick={handleUpdate}>
-              <span>Salvar</span>
+              <span>Save</span>
             </Button>
           </Form>
 
@@ -120,7 +120,7 @@ export function Profile() {
             isRed
             onClick={() => navigation("/requests")}
           >
-              <span>Histórico de Pedidos</span>
+              <span>Order History</span>
           </Button>
         </div>
 

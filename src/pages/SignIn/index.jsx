@@ -29,31 +29,31 @@ export function SignIn() {
 
       <Form>
         <header>
-          Faça login
+          Sign in
         </header>
         <Input 
           label="Email"
           type="text"
-          placeholder="Exemplo: exemplo@exemplo.com.br"
+          placeholder="Example: example@example.com.br"
           onChange={event => setEmail(event.target.value)}
         />
         <Input 
-          label="Senha"
+          label="Password"
           type="password"
-          placeholder="No mínimo 6 caracteres"
+          placeholder="At least 6 characters"
           onChange={event => setPassword(event.target.value)}
         />
         <Button
           isRed
           onClick={handleSignIn}
         >
-          <span>Entrar</span>
+          <span>Log in</span>
         </Button>
 
         <ButtonText
           to='/register'
         >
-          <span>Criar conta</span>
+          <span>Sign up</span>
         </ButtonText>
       </Form>
     </Container>
