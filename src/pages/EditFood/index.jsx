@@ -85,10 +85,14 @@ export function EditFood() {
     });
   }
 
-  function handleDelete() {
-    alert('Do you really want to delete?');
+  async function handleDelete() {
+    const confirm = window.confirm('Do you really want to delete?');
 
-    alert('Dish deleted successfully!');
+    if(confirm) {
+      await api.delete(`/foods/${params.id}`);
+      alert('Dish deleted successfully!');
+      navigate(-1);
+    }
   }
 
   return(
