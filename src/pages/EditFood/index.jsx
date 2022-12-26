@@ -137,6 +137,7 @@ export function EditFood() {
                   label="Name"
                   placeholder="Ex.: Ceasar Salad"
                   type="text"
+                  value={name}
                   onChange={ event => setName(event.target.value) }
                 />
               </div>
