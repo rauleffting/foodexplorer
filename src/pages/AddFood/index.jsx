@@ -61,7 +61,7 @@ export function AddFood() {
     formData.append("name", name);
     formData.append("price", price);
     formData.append("description", description);
-
+    
     ingredients.map(ingredient => (
         formData.append("ingredients", ingredient)
     ))

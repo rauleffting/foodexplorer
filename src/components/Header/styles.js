@@ -50,6 +50,10 @@ export const Container = styled.div`
       }
     }
   }
+
+  button {
+    max-width: 400px;
+  }
 `;
 
 export const Logo = styled.button`

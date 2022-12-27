@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://foodexplorer-api-qutd.onrender.com"
+  baseURL: "http://localhost:3333"
 });
 
 /* "http://localhost:3333" */

@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
-  padding-bottom: 100px;
+  height: 100vh;
 
   display: flex;
   align-items: center;
@@ -81,6 +80,7 @@ export const Form = styled.form`
     font-weight: 500;
     font-size: 32px;
     line-height: 24px;
+    white-space:nowrap;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
   }

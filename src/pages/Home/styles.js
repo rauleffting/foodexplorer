@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 1440px;
   height: 100vh;
 
   display: grid;
@@ -24,12 +23,12 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.main`
-  max-width: 1440px;
   grid-area: main;
   overflow-y: auto;
 
   display: flex;
   flex-direction: column;
+  
 `;
 
 export const FrontCover = styled.section`

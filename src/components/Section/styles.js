@@ -5,7 +5,7 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
 
-  margin: 62px 122px 0px 122px;
+  margin: 62px 124px 0px 124px;
 
   .desktop {
     display: flex;
@@ -66,7 +66,6 @@ export const Container = styled.section`
 export const Slider = styled.div`
   display: flex;
   align-items: center;
-  max-width: 1366px;
   position: relative;
 
   > button {

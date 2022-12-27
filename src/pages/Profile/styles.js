@@ -3,7 +3,7 @@ import theme from "../../styles/theme";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
 
 export const Content = styled.main`
@@ -25,6 +25,13 @@ export const Content = styled.main`
 
     > button {
       width: 380px;
+    }
+  }
+
+  @media(min-height: 1270px) {
+    > footer {
+    position: absolute;
+    bottom: 0;
     }
   }
 `;
