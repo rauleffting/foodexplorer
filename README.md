@@ -23,9 +23,9 @@ password: admin
 
 #### Instructions:
 
-Step 1: download.
-Step 2: npm install.
-Step 3: npm run build.
+- Step 1: download.
+- Step 2: npm install.
+- Step 3: npm run build.
 
 ## Project Photos:
 
