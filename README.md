@@ -6,7 +6,7 @@ A complete application with Reactjs and Node, in which the admin can register di
 
 Link to access the [Back-end](https://github.com/rauleffting/foodexplorer-api)!
 
-Feel free to test: https://foodexplorer-api-qutd.onrender.com
+Feel free to test: foodexplorer-94.netlify.app
 
 ### Front-end technologies used:
 - React
